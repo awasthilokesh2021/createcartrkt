@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/createcartrkt/static/css/main.ea5df0a2.css",
+    "main.js": "/createcartrkt/static/js/main.b90229b4.js",
+    "index.html": "/createcartrkt/index.html",
+    "main.ea5df0a2.css.map": "/createcartrkt/static/css/main.ea5df0a2.css.map",
+    "main.b90229b4.js.map": "/createcartrkt/static/js/main.b90229b4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ea5df0a2.css",
+    "static/js/main.b90229b4.js"
+  ]
+}
