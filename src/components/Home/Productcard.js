@@ -10,16 +10,13 @@ const Productcard = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="mt-4 w-[100%] ">
-      <div className="mx-auto w-[92%] grid grid-cols-1 justify-between 
-        items-center
-       lg:grid-cols-4 md:grid-cols-2  gap-2 
-      lg:justify-between lg:items-center
-      md:justify-around md:items-center
+    <div className="mt-4 w-[100%]">
+      <div className="mx-auto p-2 w-[92%] grid grid-cols-1 
+       lg:grid-cols-3 md:grid-cols-2  gap-2 
       ">
         {items.map((item) => {
           return (
-            <div className="py-10 w-full" key={item.id}>
+            <div className="py-10  w-full flex md:justify-center sm:justify-center justify-center" key={item.id}>
               <div className=" rounded overflow-hidden max-w-[300px] shadow-lg ">
                 <img className="w-full" src={item.img} alt="science" />
                 <div className="px-2 py-2">
