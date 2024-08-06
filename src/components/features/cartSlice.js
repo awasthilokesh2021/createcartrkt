@@ -22,10 +22,8 @@ export const productData = createSlice({
     getCartTotal: (state) => {
       let { totalQuantity, totalPrice } = state.cart.reduce(
         (cartTotal, cartItem) => {
-          console.log("carttotal", cartTotal);
-          console.log("cartitem", cartItem);
           const { price, quantity } = cartItem;
-          //console.log(price, quantity);
+
           const itemTotal = price * quantity;
           cartTotal.totalPrice += itemTotal;
           cartTotal.totalQuantity += quantity;
@@ -43,16 +41,14 @@ export const productData = createSlice({
     removeItem: (state, action) => {
       state.cart = state.cart.filter((item) => item.id !== action.payload);
     },
-    
-    increaseItemQuantity: (state, action) => {
-      const itemId = action.payload;
-      const itemToUpdate = state.cart.find((item) => item.id === itemId);
 
-      if (itemToUpdate) {
-        const quantityIncrement = 1; // You can modify this to any value you want
-        itemToUpdate.quantity += quantityIncrement;
-        itemToUpdate.price *= quantityIncrement; // Multiply the price by the quantity increment
-      }
+    increaseItemQuantity: (state, action) => {
+      state.cart = state.cart.map((item) => {
+        if (item.id === action.payload) {
+          return { ...item, quantity: item.quantity + 1 };
+        }
+        return item;
+      });
     },
 
     decreaseItemQuantity: (state, action) => {

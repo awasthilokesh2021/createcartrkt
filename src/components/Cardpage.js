@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { MdOutlineDeleteForever } from "react-icons/md";
 import { GiRoyalLove } from "react-icons/gi";
 import Sidepage from "./Sidepage";
+import { CgTrashEmpty } from "react-icons/cg";
 import { useSelector, useDispatch } from "react-redux";
 import {
   removeItem,
@@ -24,10 +25,22 @@ const Cardpage = () => {
 
   return (
     <div className=" min-h-screen w-full">
+      <h1>cardData</h1>
       <div className=" container mx-auto py-20">
         <div className="flex justify-center gap-2 ">
           <div className="w-[60%] bg-white border px-4 py-8">
-            {cart.map((data) => {
+            {cart.length === 0 ? <table className='table cart-table mb-0'>
+                                        <tbody>
+                                            <tr>
+                                                <td className=' col-span-6'>
+                                                    <div className='text-xl flex items-center gap-1'>
+                                                        <p>Your Cart Is Empty </p>
+                                                        <span className=' text-red-500'> <CgTrashEmpty /></span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>:cart.map((data) => {
               return (
                 <>
                   <div className=" flex justify-between px-8">
