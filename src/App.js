@@ -5,9 +5,11 @@ import Productdata from './components/Home/Productcard';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cardpage from './components/Cardpage';
 
+const basename = process.env.PUBLIC_URL || '';
+
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Header />
       <Routes>
         <Route path="/" element={<Productdata/>} />
