@@ -18,13 +18,15 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "cross-env REACT_APP_ENV=development react-scripts start",
-    "build": "cross-env REACT_APP_ENV=production react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "https://awasthilokesh2021.github.io/createcartrkt/"
+  ,
   "eslintConfig": {
     "extends": [
       "react-app",
